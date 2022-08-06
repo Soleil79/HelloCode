@@ -2,7 +2,7 @@
 {
     int result = arg1;
     if (arg2 > result) result = arg2;
-    if (arg2 > result) result = arg3;
+    if (arg3 > result) result = arg3;
     return result;
 }
 
