@@ -13,6 +13,19 @@
         {"Красноречие",0},
     };
 }
+class inRase
+{
+    public string Name;
+    public string Ability;
+    public string Bonus;
+    public string Side;
+    Dictionary 
+
+    {
+        
+    }
+}
+
 
 class Program
 {

@@ -6,7 +6,11 @@
 
 Console.WriteLine ("Введите трехзначное число");
 int num = Convert.ToInt32(Console.ReadLine()); 
-string stringNum = Convert.ToString(num); // Преобразовываем числовую переменную в текстовую, где каждая цифра становится отдельныv элементом типа string
+
+int a = Math.Abs(num);
+string stringNum = Convert.ToString(a); // Преобразовываем числовую переменную в текстовую, где каждая цифра становится отдельныv элементом типа string
+
+
 
 if (stringNum.Length < 3 )
 {

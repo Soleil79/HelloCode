@@ -27,5 +27,20 @@ class program
         {
             Console.WriteLine("нет, " + dayweek + " - будний день.");
         }
+   
+        /*Dictionary<int, string> eve = new Dictionary<int, string>()
+    {
+        {1, "Понедельник, рабочий день"},
+        {2, "Вторник, рабочий день"},
+        {3, "Среда, рабочий день"},
+        {4, "Четверг, рабочий день"},
+        {5, "Пятница, рабочий день"},
+        {6, "Суббота, рабочий день"},
+        {7, "Воскресенье, рабочий день"},
+    };
+    int index = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine(eve[index]);
+    */
     }
+
 }
