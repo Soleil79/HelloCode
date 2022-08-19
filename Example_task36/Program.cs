@@ -23,13 +23,13 @@ class Program
         }
         Console.WriteLine("]");
     }
-    static int SumOddNumbers (int [] array, int sum)
+    static int SumOddIndexes (int [] array, int sum)
     {
         int i = 0;
 
         while (i < array.Length)
         {
-            if (array[i] % 2 != 0)
+            if (i % 2 != 0)
             {
                 sum += array[i];
             }
@@ -44,7 +44,7 @@ class Program
         int [] newArray = new int [4];
         fillArray(newArray);
         PrintArray(newArray);
-        int SumOdd = SumOddNumbers(newArray, 0);
-        Console.WriteLine($"Сумма нечетных чисел в массиве: {SumOdd}");
+        int SumOddInd = SumOddIndexes(newArray, 0);
+        Console.WriteLine($"Сумма эллементов, стоящих на нечетных позициях в массиве: {SumOddInd}");
     }
 }
