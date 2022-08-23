@@ -9,7 +9,7 @@ class Program
     static void Main ()
     {
         int[] array = new int [0];
-        /*while (true)
+        while (true)
         {
             Console.WriteLine("Введите ряд чисел для заполнения массива ");
             string meaning = Console.ReadLine();
@@ -29,31 +29,13 @@ class Program
                 break;
             }
            
-        }*/
+        }
     
-        FillArray(array);
         PrintArray(array);
         int PositiveCount = CountPositive(array, 0);
         Console.WriteLine(" ");
         Console.WriteLine($"Количество чисел больше нуля в массиве равно: {PositiveCount}");
 
-    }
-
-
-     static int [] FillArray (int [] numsarray)
-    {
-       
-        while (true)
-        {
-                     
-            for (int i = 0; i < numsarray.Length; i++)
-            {
-                Console.WriteLine("Введите отрицательные и положительные числа: ");
-                numsarray[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            return numsarray;
-        }
-        
     }
 
     static void PrintArray (int[] coll) 
