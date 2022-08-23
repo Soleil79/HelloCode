@@ -24,7 +24,7 @@ class Program
     {  
         int i= 0;
         int N = coll.Length;
-        Console.Write("Задан массив [ ");
+        Console.Write("[ ");
         while (i < N)
         {
             if (i==N-1) 
@@ -41,30 +41,26 @@ class Program
     }
 
 
-    static int [] AddElement (int [] array)
+     static int [] MultipleNums (int [] array, int [] secondArray)
     {
         int N = array.Length;
-        int pos = array[N/2];
-       
+        int i = 0;
         
-        array = Array.Resize(ref array, array.Length + 1);
-        array[array.Length / 2] = 1;
-        
-        return array;
-    }
-
-    static int [] MultipleNums (int [] array, int [] secondArray)
-    {
-        int N = array.Length;
-        int j = 0;
-        
-        for (int i = 0; i < array.Length/2; i++)
+        while (i < N)
         {
-           secondArray [j] = array[i] * array[N-1];
+        if (i != N-1)
+        {
+           secondArray [i] = array[i] * array[N-1];
             N--;
-            j++;
+            i++;
         }
-        return secondArray;
+        else
+        {
+            secondArray [i] = array[i] * 1;
+            break;
+        }
+     
+        }   return secondArray;
     }
     
     static void Main ()
@@ -73,17 +69,25 @@ class Program
         int arraylenth = Convert.ToInt32(Console.ReadLine());
         int [] newArray = new int [arraylenth];
         FillArray(newArray);
+        Console.WriteLine($"Задан массив");
         PrintArray(newArray);
         int N = newArray.Length;
-        int[] MultipleArray = new int [N/2];
-            if (N % 2 != 0)
-            {
-             AddElement(MultipleArray);
-            }
-
-        MultipleNums(newArray, MultipleArray);
-        Console.WriteLine(" ");
-        PrintArray(MultipleArray);
+        if (N %  2 != 0)
+        {
+            int[] MultipleArray = new int [N/2+1];
+            MultipleNums(newArray, MultipleArray);
+            Console.WriteLine(" ");
+            Console.WriteLine($"Новый массив, полученный из произведений противоположных элементов массива, заданного ранее: ");
+            PrintArray(MultipleArray);
+        }
+        else
+        {
+            int[] MultipleArray = new int [N/2];
+            MultipleNums(newArray, MultipleArray);
+            Console.WriteLine(" ");
+            Console.WriteLine($"Новый массив, полученный из произведений противоположных элементов массива, заданного ранее: ");
+            PrintArray(MultipleArray);
+        }
 
     }
 }
