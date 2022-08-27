@@ -30,7 +30,7 @@ class Program
         
         if (row < rowLentgh && column < columnLength)
         {
-            FindPos(matrix, row, column);
+            Console.Write($"Число, расположенное на заданных позициях в массиве равно: {matrix[row, column]}");
         }
 
         else
@@ -64,21 +64,5 @@ class Program
         }
     }
     
-        static void FindPos (int [,] matr, int a, int b)
-    {
-        for (int i = 0; i < matr.GetLength(0); i++)
-        {
-            for (int j = 0; j < matr.GetLength(1); j++)
-            {
-                if (matr[i,j] == matr[a,b])
-                {
-                    Console.Write($"Число, расположенное на заданных позициях в массиве равно: {matr[a, b]}");
-                    
-                }
-                                
-            }
-        }
-    }
-
 }
 
