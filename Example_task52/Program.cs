@@ -16,12 +16,15 @@ class Program
 {
       static void Main ()
   {
+    
+    Console.WriteLine("Решение Задачи 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.");
     int m = 3;
     int n = 4;
     double [,] RandomMatr = new double[m,n];
     FillArray(RandomMatr);
     PrintArray(RandomMatr);
-    ColumnAverage(RandomMatr, m, n);
+    ColumnAverage(RandomMatr, m, n); 
+    RowAverage(RandomMatr, m, n); // дополнительное вычисление среднего арифметического по строкам матрицы
   }
 
     static void FillArray (double [,] matr)
@@ -63,6 +66,25 @@ class Program
             }
             double average = Math.Round(sum / rowlength, 1);
             Console.WriteLine($"{i+1} столбца: {average}");
+        }
+        
+    }
+
+// Дополнительно вычислим среднее арифметическое каждой строки:
+      static void  RowAverage (double [,] matr, int rowlength, int columnlength)
+    {
+          Console.WriteLine("Среднее арифметическое: ");
+
+        for (int i = 0; i < rowlength; i++) // здесь прогоняем по строкам и их принимаем за i
+        {
+            double sum = 0;
+            for (int j = 0; j < columnlength; j++) // здесь j- столбцы
+            {
+                sum += matr[i,j];                          
+          
+            }
+            double average = Math.Round(sum / columnlength, 1);
+            Console.WriteLine($"{i+1} строки: {average}");
         }
         
     }
