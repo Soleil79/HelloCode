@@ -17,7 +17,7 @@ class Program
 {
     static void Main()
     {
-        int [,] matrix1 = {};
+        int [,] matrix1 = new int [2,2];
         FillArray(matrix1);
         Console.WriteLine("Задан первый двумерный массив чисел: ");
         PrintArray(matrix1);
